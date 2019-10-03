@@ -11,7 +11,8 @@ public class Tarea1{
 			System.out.println("*  2- Cajero automatico     *");
 			System.out.println("*  3- Numeros amigos        *");
 			System.out.println("*  4- Numero de las suerte  *");
-			System.out.println("*  5- Terminar el programa  *");
+			System.out.println("*  5- Datos alumnos         *");
+			System.out.println("*  6- Terminar el programa  *");
 			System.out.println("*****************************");
 			System.out.print("Ingrese una opcion: ");
 			opc = sc.nextInt();
@@ -122,7 +123,36 @@ public class Tarea1{
 					}
 					System.out.println(numS);
 					break;
-				case 5: // Cerrar el programa
+				case 5: // Datos de los alumnos
+					int edad, mayor20 = 0, mayor185 = 0;
+					double altura, estaturaMedia = 0, edadMedia = 0;
+
+					for(i=0;i<=4;i++){
+						System.out.print((i+1)+"- Ingrese la edad: ");
+						edad = sc.nextInt();
+						System.out.print("   Ingrese la altura: ");
+						altura= sc.nextDouble();
+
+						edadMedia = edadMedia + edad;
+						estaturaMedia = estaturaMedia + altura;
+
+						if(edad > 20){
+							mayor20++;
+						}
+
+						if(altura > 1.85){
+							mayor185++;
+						}
+					}
+
+					System.out.println("");
+					System.out.println("****************************************************");
+					System.out.println("El promedio de edad es de: " + (edadMedia/5));
+					System.out.println("El promedio de altura es de: " + (estaturaMedia/5) + " cm");
+					System.out.println("La cantidad de estudiantes mayores de 20 annos es de " + mayor20);
+					System.out.println("La cantidad de estudiantes con una altura mayor a 1.85 es de " + mayor185);
+					break;
+				case 6: // Cerrar el programa
 					System.out.println("Terminar el programa");
 					break;
 				default:
@@ -130,7 +160,7 @@ public class Tarea1{
 			}// end switch
 
 			System.out.println(" ");
-		} while(opc != 5);
+		} while(opc != 6);
 
 		System.out.println("Fin.");
 	}
